@@ -1,22 +1,22 @@
 terraform {
-  required_version = "~> 0.14"
+  required_version = "~> 1.0.11"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0"
+      version = "~> 3.67.0"
     }
   }
 
   backend "s3" {
-    bucket = "yourdomain-terraform"
+    bucket = "warmoldhouse-terraform"
     key    = "prod/terraform.tfstate"
-    region = "eu-west-1"
+    region = "eu-west-2"
   }
 }
 
 provider "aws" {
-  region = "eu-west-1"
+  region = "eu-west-2"
 }
 
 provider "aws" {
